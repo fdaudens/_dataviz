@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+<script src="src/d3.min.js" type="application/javascript"></script>
+<script src="src/timeknots.js" type="application/javascript"></script>
+<style>
+  /* Webfont:  Rubrik-Medium */
+@font-face {
+    font-family:'RubrikM';
+  font-style:normal;
+  font-weight:400;
+  src:  url(http://www.r-c.ca/_font/Rubrik/Rubrik-Medium.eot);
+  src:  url(http://www.r-c.ca/_font/Rubrik-Medium.eot?#iefix) format("embedded-opentype"),
+      url(http://www.r-c.ca/_font/Rubrik/Rubrik-Medium.woff) format("woff"),
+      url(http://www.r-c.ca/_font/Rubrik/Rubrik-Medium.svg#Rubrik-Medium) format("svg"),
+      url(http://www.r-c.ca/_font/Rubrik/Rubrik-Medium.ttf) format("truetype")
+}
+    
+/* Webfont:  Rubrik-Light */
+@font-face {
+    font-family:'RubrikLt';
+  font-style:normal;
+  font-weight:400;
+  src:  url(http://www.r-c.ca/_font/Rubrik/Rubrik-Light.eot);
+  src:  url(http://www.r-c.ca/_font/Rubrik-Light.eot?#iefix) format("embedded-opentype"),
+      url(http://www.r-c.ca/_font/Rubrik/Rubrik-Light.woff) format("woff"),
+      url(http://www.r-c.ca/_font/Rubrik/Rubrik-Light.svg#Rubrik-Light) format("svg"),
+      url(http://www.r-c.ca/_font/Rubrik/Rubrik-Light.ttf) format("truetype")
+}
+#figure {
+  width: 100%;
+text-align: left;
+}
+#graphique{
+padding-right: 50px;  
+}
+  body {
+    background-color: white;
+}
+  h1 {
+    font-size: 20px;
+    margin: 0;
+    font-family: RubrikLT;
+  }
+
+  p {
+    font-size: 11px;
+    margin: 11px 0 0 0;
+    font-family: RubrikLT;
+  }
+</style>
+</head>
+<body>
+<div class="figure">
+ <h1>Élections législatives et référendums en Grèce depuis 2000</12>
+<div  id="graphique">
+  </div>
+ <p>Source : <a href="http://www.electionguide.org/" target=_"blank">ElectionGuide</a></p>
+</div>
+<script type="text/javascript">
+
+var elections = [
+  {
+    name:"Référendum",
+    date:"2015-07-05"
+  },
+  {
+    name:"Législatives",
+    date:"2015-01-25"
+  },
+  {
+    name:"Législatives",
+    date:"2012-06-17"
+  },
+  {
+    name:"Législatives",
+    date:"2012-05-06"
+  },
+  {
+    name:"Législatives",
+    date:"2009-10-04"
+  },
+  {
+    name:"Législatives",
+    date:"2007-09-16"
+  },
+  {
+    name:"Législatives",
+    date:"2004-03-07"
+  },
+  {
+    name:"Législatives",
+    date:"2000-04-09"
+  }
+]
+TimeKnots.draw("#graphique", elections, {dateFormat: "%d/%m/%Y", horizontalLayout: true, color: "#cc0000", showLabels: true, labelFormat: "%Y"});
+
+</script>
+
+</body>
+</html>
+
