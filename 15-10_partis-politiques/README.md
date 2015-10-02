@@ -1,0 +1,3 @@
+# La petite histoire des partis politiques au Canada / The story of political parties in Canada
+Chaque parti politique fédéral au Canada représenté par le nombre de députés élus à chaque campagne électorale depuis 1867, date de création du Parlement.
+Every canadian political party represented in small multiples by the number of elected MPs for each electoral campaign since 1867 (creation date of Parliament).
