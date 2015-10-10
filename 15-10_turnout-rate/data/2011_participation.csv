@@ -1,0 +1,309 @@
+province,circonscription,parti,numeroCirconscription,population,electeurs,tauxParticipation
+Alberta,Calgary--Nose Hill,Parti conservateur,48005,130942,101910,56.6
+Alberta,Calgary-Centre,Parti conservateur,48006,124197,89536,55.3
+Alberta,Calgary-Centre-Nord,Parti conservateur,48003,114615,84609,59.7
+Alberta,Calgary-Est,Parti conservateur,48002,110479,75850,45.9
+Alberta,Calgary-Nord-Est,Parti conservateur,48004,129015,87307,47.8
+Alberta,Calgary-Ouest,Parti conservateur,48009,132162,103812,62.3
+Alberta,Calgary-Sud-Est,Parti conservateur,48007,125738,106439,59.5
+Alberta,Calgary-Sud-Ouest,Parti conservateur,48008,120750,95026,60.4
+Alberta,Crowfoot,Parti conservateur,48010,114825,88881,59.2
+Alberta,Edmonton--Leduc,Parti conservateur,48014,116986,101532,58.7
+Alberta,Edmonton--Mill Woods--Beaumont,Parti conservateur,48011,112919,86529,53
+Alberta,Edmonton--Sherwood Park,Parti conservateur,48016,118073,94602,58.4
+Alberta,Edmonton--Spruce Grove,Parti conservateur,48017,128945,105599,55.8
+Alberta,Edmonton--St. Albert,Parti conservateur,48015,126447,97504,55.9
+Alberta,Edmonton--Strathcona,Nouveau parti démocratique,48018,99267,73444,66.5
+Alberta,Edmonton-Centre,Parti conservateur,48012,120326,86408,57.2
+Alberta,Edmonton-Est,Parti conservateur,48013,128199,92507,49.6
+Alberta,Fort McMurray--Athabasca,Parti conservateur,48001,100805,76298,40.3
+Alberta,Lethbridge,Parti conservateur,48019,113531,90036,53.7
+Alberta,Macleod,Parti conservateur,48020,107638,85720,60.4
+Alberta,Medicine Hat,Parti conservateur,48021,113085,82599,52.1
+Alberta,Peace River,Parti conservateur,48022,138009,98135,49
+Alberta,Red Deer,Parti conservateur,48023,124063,93723,53.5
+Alberta,Vegreville--Wainwright,Parti conservateur,48024,111427,83790,58.7
+Alberta,Westlock--St. Paul,Parti conservateur,48025,101010,76291,55.2
+Alberta,Wetaskiwin,Parti conservateur,48026,107914,80262,57.9
+Alberta,Wild Rose,Parti conservateur,48027,115872,95631,61.2
+Alberta,Yellowhead,Parti conservateur,48028,103111,75410,55.1
+Colombie-Britannique,Abbotsford,Parti conservateur,59001,124515,85143,59
+Colombie-Britannique,Burnaby--Douglas,Nouveau parti démocratique,59002,112119,84911,57.6
+Colombie-Britannique,Burnaby--New Westminster,Nouveau parti démocratique,59003,118713,84271,53.3
+Colombie-Britannique,Cariboo--Prince George,Parti conservateur,59004,106382,76216,57.3
+Colombie-Britannique,Chilliwack--Fraser Canyon,Parti conservateur,59005,112118,84930,58.1
+Colombie-Britannique,Colombie-Britannique-Southern Interior,Nouveau parti démocratique,59026,95477,75751,65.6
+Colombie-Britannique,Delta--Richmond-Est,Parti conservateur,59006,106103,80821,59.7
+Colombie-Britannique,Esquimalt--Juan de Fuca,Nouveau parti démocratique,59008,120669,98477,65.2
+Colombie-Britannique,Fleetwood--Port Kells,Parti conservateur,59009,123243,95797,52.9
+Colombie-Britannique,Île de Vancouver-Nord,Parti conservateur,59031,113356,90374,65.5
+Colombie-Britannique,Kamloops--Thompson--Cariboo,Parti conservateur,59010,114675,90855,62.7
+Colombie-Britannique,Kelowna--Lake Country,Parti conservateur,59011,122214,100884,59.8
+Colombie-Britannique,Kootenay--Columbia,Parti conservateur,59012,86811,67663,63.4
+Colombie-Britannique,Langley,Parti conservateur,59013,117858,90225,61.3
+Colombie-Britannique,Nanaimo--Alberni,Parti conservateur,59014,121434,98657,66.7
+Colombie-Britannique,Nanaimo--Cowichan,Nouveau parti démocratique,59015,125149,99872,64.2
+Colombie-Britannique,New Westminster--Coquitlam,Nouveau parti démocratique,59017,111231,84337,59.6
+Colombie-Britannique,Newton--Delta-Nord,Nouveau parti démocratique,59016,118649,75535,61.4
+Colombie-Britannique,North Vancouver,Parti conservateur,59019,122371,89416,66.9
+Colombie-Britannique,Okanagan--Coquihalla,Parti conservateur,59020,107316,86195,61.9
+Colombie-Britannique,Okanagan--Shuswap,Parti conservateur,59018,116236,91762,61.9
+Colombie-Britannique,Pitt Meadows--Maple Ridge--Mission,Parti conservateur,59007,120662,89613,59.3
+Colombie-Britannique,Port Moody--Westwood--Port Coquitlam,Parti conservateur,59021,116563,86190,56.5
+Colombie-Britannique,Prince George--Peace River,Parti conservateur,59022,105865,72580,53.3
+Colombie-Britannique,Richmond,Parti conservateur,59023,114137,85643,50.5
+Colombie-Britannique,Saanich--Gulf Islands,Parti vert,59024,115724,93380,73.9
+Colombie-Britannique,Skeena--Bulkley Valley,Nouveau parti démocratique,59025,91926,61043,57.7
+Colombie-Britannique,Surrey-Nord,Nouveau parti démocratique,59028,111960,72145,51.6
+Colombie-Britannique,Surrey-Sud--White Rock--Cloverdale,Parti conservateur,59027,111756,91485,64.3
+Colombie-Britannique,Vancouver Kingsway,Nouveau parti démocratique,59032,119815,82619,57.1
+Colombie-Britannique,Vancouver Quadra,Parti libéral,59033,119627,87224,62.4
+Colombie-Britannique,Vancouver-Centre,Parti libéral,59029,123701,102201,57.7
+Colombie-Britannique,Vancouver-Est,Nouveau parti démocratique,59030,106816,81801,54.4
+Colombie-Britannique,Vancouver-Sud,Parti conservateur,59034,120284,82509,54.9
+Colombie-Britannique,Victoria,Nouveau parti démocratique,59035,108771,89750,67.5
+Colombie-Britannique,West Vancouver--Sunshine Coast--Sea to Sky Country,Parti conservateur,59036,129241,99642,63.3
+Île-du-Prince-Édouard,Cardigan,Parti libéral,11001,35067,27581,77
+Île-du-Prince-Édouard,Charlottetown,Parti libéral,11002,32174,26760,69.4
+Île-du-Prince-Édouard,Egmont,Parti conservateur,11003,34814,27197,71
+Île-du-Prince-Édouard,Malpeque,Parti libéral,11004,33796,26918,75.7
+Manitoba,Brandon--Souris,Parti conservateur,46001,84602,61289,57.5
+Manitoba,Charleswood--St. James--Assiniboia,Parti conservateur,46002,81469,62609,64.8
+Manitoba,Churchill,Nouveau parti démocratique,46003,75232,46068,43.8
+Manitoba,Dauphin--Swan River--Marquette,Parti conservateur,46004,75103,53701,54.9
+Manitoba,Elmwood--Transcona,Parti conservateur,46005,78700,59154,55.9
+Manitoba,Kildonan--St. Paul,Parti conservateur,46006,81532,63866,61.3
+Manitoba,Portage--Lisgar,Parti conservateur,46007,85653,59799,59.4
+Manitoba,Provencher,Parti conservateur,46008,87737,64104,61.7
+Manitoba,Saint-Boniface,Parti conservateur,46009,84473,65604,66.2
+Manitoba,Selkirk--Interlake,Parti conservateur,46010,90807,66370,62.3
+Manitoba,Winnipeg-Centre,Nouveau parti démocratique,46011,81017,54364,48.2
+Manitoba,Winnipeg-Centre-Sud,Parti conservateur,46014,78286,58075,69
+Manitoba,Winnipeg-Nord,Parti libéral,46012,79366,51894,49.3
+Manitoba,Winnipeg-Sud,Parti conservateur,46013,84424,64144,68.4
+Nouveau-Brunswick,Acadie--Bathurst,Nouveau parti démocratique,13001,78948,66298,70.3
+Nouveau-Brunswick,Beauséjour,Parti libéral,13002,76259,63267,71.2
+Nouveau-Brunswick,Fredericton,Parti conservateur,13003,85886,69732,64.2
+Nouveau-Brunswick,Fundy Royal,Parti conservateur,13004,69471,56795,64.6
+Nouveau-Brunswick,Madawaska--Restigouche,Parti conservateur,13005,62593,50966,69.8
+Nouveau-Brunswick,Miramichi,Parti conservateur,13006,53844,43547,71.4
+Nouveau-Brunswick,Moncton--Riverview--Dieppe,Parti conservateur,13007,89334,75298,65.2
+Nouveau-Brunswick,Nouveau-Brunswick-Sud-Ouest,Parti conservateur,13008,63232,49578,64.7
+Nouveau-Brunswick,Saint John,Parti conservateur,13009,82078,64264,58
+Nouveau-Brunswick,Tobique--Mactaquac,Parti conservateur,13010,68352,53073,63.9
+Nouvelle-Écosse,Cape Breton--Canso,Parti libéral,12001,71968,57331,62.5
+Nouvelle-Écosse,Cumberland--Colchester--Musquodoboit Valley,Parti conservateur,12007,87895,69188,58.3
+Nouvelle-Écosse,Dartmouth--Cole Harbour,Nouveau parti démocratique,12003,87886,70756,61.4
+Nouvelle-Écosse,Halifax,Nouveau parti démocratique,12004,89448,73357,63
+Nouvelle-Écosse,Halifax-Ouest,Parti libéral,12005,88756,72862,62.3
+Nouvelle-Écosse,Kings--Hants,Parti libéral,12006,81531,65355,61.8
+Nouvelle-Écosse,Nova-Centre,Parti conservateur,12002,72966,57963,66
+Nouvelle-Écosse,Nova-Ouest,Parti conservateur,12011,86393,67938,63.7
+Nouvelle-Écosse,Sackville--Eastern Shore,Nouveau parti démocratique,12008,86963,70329,59.5
+Nouvelle-Écosse,South Shore--St. Margaret's,Parti conservateur,12009,82855,67296,62.2
+Nouvelle-Écosse,Sydney--Victoria,Parti libéral,12010,76801,60719,61.5
+Nunavut,Nunavut,Parti conservateur,62001,29474,17349,45.7
+Ontario,Ajax--Pickering,Parti conservateur,35001,117183,93565,60.3
+Ontario,Algoma--Manitoulin--Kapuskasing,Nouveau parti démocratique,35002,77961,58857,61.9
+Ontario,Ancaster--Dundas--Flamborough--Westdale,Parti conservateur,35003,111844,86382,68.5
+Ontario,Barrie,Parti conservateur,35004,128430,94939,59.9
+Ontario,Beaches--East York,Nouveau parti démocratique,35005,104831,73302,66.7
+Ontario,Bramalea--Gore--Malton,Parti conservateur,35006,152698,108751,53.6
+Ontario,Brampton--Springdale,Parti conservateur,35007,131797,89017,57.7
+Ontario,Brampton-Ouest,Parti conservateur,35008,170422,117926,54
+Ontario,Brant,Parti conservateur,35009,125136,95508,60.3
+Ontario,Bruce--Grey--Owen Sound,Parti conservateur,35026,105947,79977,64.1
+Ontario,Burlington,Parti conservateur,35010,118310,91716,66.5
+Ontario,Cambridge,Parti conservateur,35011,129434,94591,58.5
+Ontario,Carleton--Mississippi Mills,Parti conservateur,35012,128915,107407,71.7
+Ontario,Chatham-Kent--Essex,Parti conservateur,35013,109484,74231,58.8
+Ontario,Davenport,Nouveau parti démocratique,35015,104615,66731,59.2
+Ontario,Don Valley-Est,Parti conservateur,35016,109640,69690,56.6
+Ontario,Don Valley-Ouest,Parti conservateur,35017,117083,82107,65.4
+Ontario,Dufferin--Caledon,Parti conservateur,35018,111486,81155,60.1
+Ontario,Durham,Parti conservateur,35014,118500,92470,63.2
+Ontario,Eglinton--Lawrence,Parti conservateur,35019,110066,73522,66.2
+Ontario,Elgin--Middlesex--London,Parti conservateur,35020,110028,81661,62.2
+Ontario,Essex,Parti conservateur,35021,123872,90421,58.5
+Ontario,Etobicoke--Lakeshore,Parti conservateur,35023,114641,87188,62.8
+Ontario,Etobicoke-Centre,Parti conservateur,35022,111349,81765,64.6
+Ontario,Etobicoke-Nord,Parti libéral,35024,108501,63014,51.6
+Ontario,Glengarry--Prescott--Russell,Parti conservateur,35025,104309,85413,67.9
+Ontario,Guelph,Parti libéral,35027,114943,91316,64.9
+Ontario,Haldimand--Norfolk,Parti conservateur,35028,107775,80640,62.8
+Ontario,HaParti libéralurton--Kawartha Lakes--Brock,Parti conservateur,35029,119141,93250,63
+Ontario,Halton,Parti conservateur,35030,151943,131924,61.7
+Ontario,Hamilton Mountain,Nouveau parti démocratique,35033,122729,89312,61.1
+Ontario,Hamilton-Centre,Nouveau parti démocratique,35031,117509,78562,53.6
+Ontario,Hamilton-Est--Stoney Creek,Nouveau parti démocratique,35032,116434,85710,57.1
+Ontario,Huron--Bruce,Parti conservateur,35034,104313,78695,68
+Ontario,Kenora,Parti conservateur,35035,64291,42036,58.8
+Ontario,Kingston et les Îles,Parti libéral,35036,119069,96049,63.4
+Ontario,Kitchener--Conestoga,Parti conservateur,35038,114405,88766,60.4
+Ontario,Kitchener--Waterloo,Parti conservateur,35039,126742,95966,69.2
+Ontario,Kitchener-Centre,Parti conservateur,35037,107540,80480,62.1
+Ontario,Lambton--Kent--Middlesex,Parti conservateur,35046,107635,79754,64.5
+Ontario,Lanark--Frontenac--Lennox and Addington,Parti conservateur,35040,117389,91463,64.6
+Ontario,Leeds--Grenville,Parti conservateur,35041,99206,76802,64.4
+Ontario,London--Fanshawe,Nouveau parti démocratique,35042,107218,75138,57
+Ontario,London-Centre-Nord,Parti conservateur,35043,115250,88478,59.8
+Ontario,London-Ouest,Parti conservateur,35044,118335,93915,66.5
+Ontario,Markham--Unionville,Parti libéral,35045,127191,92638,54.2
+Ontario,Mississauga--Brampton-Sud,Parti conservateur,35047,136470,94531,56.3
+Ontario,Mississauga--Erindale,Parti conservateur,35049,143361,105430,60.4
+Ontario,Mississauga--Streetsville,Parti conservateur,35051,130033,87480,57.8
+Ontario,Mississauga-Est--Cooksville,Parti conservateur,35048,126642,85018,55.7
+Ontario,Mississauga-Sud,Parti conservateur,35050,110932,78551,63.2
+Ontario,Nepean--Carleton,Parti conservateur,35052,133245,112535,71.2
+Ontario,Newmarket--Aurora,Parti conservateur,35053,121924,92731,63
+Ontario,Niagara Falls,Parti conservateur,35054,126696,96176,56.4
+Ontario,Niagara-Ouest--Glanbrook,Parti conservateur,35055,111024,89763,65.8
+Ontario,Nickel Belt,Nouveau parti démocratique,35056,89377,72280,62.1
+Ontario,Nipissing--Timiskaming,Parti conservateur,35057,90963,70754,60.1
+Ontario,Northumberland--Quinte West,Parti conservateur,35058,123706,96154,63.7
+Ontario,Oak Ridges--Markham,Parti conservateur,35059,169642,153972,59
+Ontario,Oakville,Parti conservateur,35060,113714,85920,68
+Ontario,Oshawa,Parti conservateur,35061,116881,89635,56.8
+Ontario,Ottawa--Orléans,Parti conservateur,35063,109950,89802,71.7
+Ontario,Ottawa--Vanier,Parti libéral,35065,101611,79309,66.5
+Ontario,Ottawa-Centre,Nouveau parti démocratique,35062,109336,90008,72.4
+Ontario,Ottawa-Ouest--Nepean,Parti conservateur,35066,109735,82874,68.4
+Ontario,Ottawa-Sud,Parti libéral,35064,117581,87399,67.8
+Ontario,Oxford,Parti conservateur,35067,102756,77035,61.9
+Ontario,Parkdale--High Park,Nouveau parti démocratique,35068,102142,74463,68.7
+Ontario,Parry Sound--Muskoka,Parti conservateur,35069,90281,71477,65.1
+Ontario,Perth--Wellington,Parti conservateur,35070,103874,73391,63.5
+Ontario,Peterborough,Parti conservateur,35071,116626,91709,64.7
+Ontario,Pickering--Scarborough-Est,Parti conservateur,35072,106602,78501,61.2
+Ontario,Prince Edward--Hastings,Parti conservateur,35073,113227,89208,61.4
+Ontario,Renfrew--Nipissing--Pembroke,Parti conservateur,35074,98803,78307,65.8
+Ontario,Richmond Hill,Parti conservateur,35075,122614,90924,55.2
+Ontario,Sarnia--Lambton,Parti conservateur,35078,105360,79688,62.6
+Ontario,Sault Ste. Marie,Parti conservateur,35079,89028,69259,64.2
+Ontario,Scarborough--Agincourt,Parti libéral,35080,111867,73205,56
+Ontario,Scarborough--Guildwood,Parti libéral,35082,108813,67728,56.8
+Ontario,Scarborough--Rouge River,Nouveau parti démocratique,35083,130974,85183,55
+Ontario,Scarborough-Centre,Parti conservateur,35081,108010,70274,54.3
+Ontario,Scarborough-Sud-Ouest,Nouveau parti démocratique,35084,102196,69389,58.4
+Ontario,Simcoe--Grey,Parti conservateur,35085,125985,99354,65.1
+Ontario,Simcoe-Nord,Parti conservateur,35086,119400,90779,64.1
+Ontario,St. Catharines,Parti conservateur,35076,112869,83475,60.5
+Ontario,St. Paul's,Parti libéral,35077,111131,83367,66.5
+Ontario,Stormont--Dundas--South Glengarry,Parti conservateur,35087,99764,76915,62.1
+Ontario,Sudbury,Nouveau parti démocratique,35088,92161,72019,63.3
+Ontario,Thornhill,Parti conservateur,35089,131978,99867,60
+Ontario,Thunder Bay--Rainy River,Nouveau parti démocratique,35090,85153,62765,59.4
+Ontario,Thunder Bay--Superior-Nord,Nouveau parti démocratique,35091,82589,61546,59.9
+Ontario,Timmins--Baie James,Nouveau parti démocratique,35092,80791,60095,55.6
+Ontario,Toronto--Danforth,Nouveau parti démocratique,35094,103655,74409,65
+Ontario,Toronto-Centre,Parti libéral,35093,121407,88810,62.9
+Ontario,Trinity--Spadina,Nouveau parti démocratique,35095,115361,101020,64.9
+Ontario,Vaughan,Parti conservateur,35096,154206,125059,55.1
+Ontario,Welland,Nouveau parti démocratique,35097,112875,85007,61.4
+Ontario,Wellington--Halton Hills,Parti conservateur,35098,111241,83499,66.2
+Ontario,Whitby--Oshawa,Parti conservateur,35099,135893,103125,62.5
+Ontario,Willowdale,Parti conservateur,35100,129356,93584,57.2
+Ontario,Windsor-Ouest,Nouveau parti démocratique,35102,122219,81984,48.8
+Ontario,Windsor--Tecumseh,Nouveau parti démocratique,35101,118478,84458,53
+Ontario,York--Simcoe,Parti conservateur,35104,120371,91662,57.9
+Ontario,York-Centre,Parti conservateur,35103,113457,71753,59
+Ontario,York-Ouest,Parti libéral,35106,103948,58090,48.2
+Ontario,York-Sud--Weston,Nouveau parti démocratique,35105,114458,68361,51.9
+Québec,Abitibi--Baie-James--Nunavik--Eeyou,Nouveau parti démocratique,24046,80894,59325,53.3
+Québec,Abitibi--Témiscamingue,Nouveau parti démocratique,24001,102795,82079,59.7
+Québec,Ahuntsic,Bloc québécois,24002,100471,73254,64.7
+Québec,Alfred-Pellan,Nouveau parti démocratique,24003,104765,84630,65.7
+Québec,Argenteuil--Papineau--Mirabel,Nouveau parti démocratique,24004,111534,96723,61.1
+Québec,Bas-Richelieu--Nicolet--Bécancour,Bloc québécois,24054,91745,77290,65.7
+Québec,Beauce,Parti conservateur,24005,103617,84941,63
+Québec,Beauharnois--Salaberry,Nouveau parti démocratique,24006,106856,89454,62.1
+Québec,Beauport--Limoilou,Nouveau parti démocratique,24007,101331,84859,63.2
+Québec,Berthier--Maskinongé,Nouveau parti démocratique,24008,107911,90838,63.6
+Québec,Bourassa,Parti libéral,24009,100683,70207,55.1
+Québec,Brome--Missisquoi,Nouveau parti démocratique,24010,92591,80371,66.1
+Québec,Brossard--La Prairie,Nouveau parti démocratique,24011,113985,96795,64.8
+Québec,Chambly--Borduas,Nouveau parti démocratique,24012,116925,99210,70.4
+Québec,Charlesbourg--Haute-Saint-Charles,Nouveau parti démocratique,24013,94522,82345,66.1
+Québec,Châteauguay--Saint-Constant,Nouveau parti démocratique,24015,107165,88908,63.9
+Québec,Chicoutimi--Le Fjord,Nouveau parti démocratique,24016,96483,79369,65.1
+Québec,Compton--Stanstead,Nouveau parti démocratique,24017,100148,80470,63.6
+Québec,Drummond,Nouveau parti démocratique,24018,92982,77280,62.5
+Québec,Gaspésie--Îles-de-la-Madeleine,Nouveau parti démocratique,24019,82007,69429,53.8
+Québec,Gatineau,Nouveau parti démocratique,24020,108742,89537,64.1
+Québec,Haute-Gaspésie--La Mitis--Matane--Matapédia,Bloc québécois,24041,73140,59397,59.7
+Québec,Hochelaga,Nouveau parti démocratique,24021,100915,80515,58.4
+Québec,Honoré-Mercier,Nouveau parti démocratique,24022,106196,81736,59.8
+Québec,Hull--Aylmer,Nouveau parti démocratique,24023,110902,91958,65
+Québec,Jeanne-Le Ber,Nouveau parti démocratique,24024,112863,89365,59.1
+Québec,Joliette,Nouveau parti démocratique,24025,108169,91695,63.3
+Québec,Jonquière--Alma,Nouveau parti démocratique,24026,97232,81098,65.8
+Québec,La Pointe-de-l'Île,Nouveau parti démocratique,24028,99685,80201,60.4
+Québec,Lac-Saint-Louis,Parti libéral,24027,105622,82542,65.9
+Québec,LaSalle--Émard,Nouveau parti démocratique,24029,100327,74755,56.9
+Québec,Laurentides--Labelle,Nouveau parti démocratique,24030,105884,92025,62.2
+Québec,Laurier--Sainte-Marie,Nouveau parti démocratique,24031,101758,79772,63.4
+Québec,Laval,Nouveau parti démocratique,24032,102230,85204,60.6
+Québec,Laval--Les Îles,Nouveau parti démocratique,24033,111958,92755,58.9
+Québec,Lévis--Bellechasse,Parti conservateur,24034,105927,90515,65.9
+Québec,Longueuil--Pierre-Boucher,Nouveau parti démocratique,24035,98032,78791,67.1
+Québec,Lotbinière--Chutes-de-la-Chaudière,Parti conservateur,24036,100454,82725,69.2
+Québec,Louis-Hébert,Nouveau parti démocratique,24037,101730,82760,73.8
+Québec,Louis-Saint-Laurent,Nouveau parti démocratique,24038,96286,86945,66.2
+Québec,Manicouagan,Nouveau parti démocratique,24039,83608,65648,52
+Québec,Marc-Aurèle-Fortin,Nouveau parti démocratique,24040,107149,87923,67.5
+Québec,Mégantic--L'Érable,Parti conservateur,24042,87078,70238,64.6
+Québec,Mont-Royal,Parti libéral,24044,98888,68556,57.4
+Québec,Montcalm,Nouveau parti démocratique,24043,122825,107677,61.5
+Québec,Montmagny--L'Islet--Kamouraska--Rivière-du-Loup,Nouveau parti démocratique,24058,97492,78969,61.1
+Québec,Montmorency--Charlevoix--Haute-Côte-Nord,Nouveau parti démocratique,24014,90535,76661,62.3
+Québec,Notre-Dame-de-Grâce--Lachine,Nouveau parti démocratique,24045,104715,77977,58.5
+Québec,Outremont,Nouveau parti démocratique,24047,95771,65573,59.7
+Québec,Papineau,Parti libéral,24048,101019,70973,61.1
+Québec,Pierrefonds--Dollard,Nouveau parti démocratique,24049,105504,81767,59.2
+Québec,Pontiac,Nouveau parti démocratique,24050,99589,82670,59.7
+Québec,Portneuf--Jacques-Cartier,Nouveau parti démocratique,24051,93526,81093,65.9
+Québec,Québec,Nouveau parti démocratique,24052,95433,80608,66.1
+Québec,Repentigny,Nouveau parti démocratique,24053,109636,94047,66.8
+Québec,Richmond--Arthabaska,Bloc québécois,24055,100116,82637,65.6
+Québec,Rimouski-Neigette--Témiscouata--Les Basques,Nouveau parti démocratique,24056,84453,68625,62.9
+Québec,Rivière-des-Mille-Îles,Nouveau parti démocratique,24057,97258,79689,66.6
+Québec,Rivière-du-Nord,Nouveau parti démocratique,24059,101576,90638,60.1
+Québec,Roberval--Lac-Saint-Jean,Parti conservateur,24060,78895,63645,64.2
+Québec,Rosemont--La Petite-Patrie,Nouveau parti démocratique,24061,105864,81961,66.5
+Québec,Saint-Bruno--Saint-Hubert,Nouveau parti démocratique,24062,101416,82381,67.2
+Québec,Saint-Hyacinthe--Bagot,Nouveau parti démocratique,24063,95983,79289,66
+Québec,Saint-Jean,Nouveau parti démocratique,24064,102902,85777,62.3
+Québec,Saint-Lambert,Nouveau parti démocratique,24065,94541,73523,60.5
+Québec,Saint-Laurent--Cartierville,Parti libéral,24066,109015,78870,52.2
+Québec,Saint-Léonard--Saint-Michel,Parti libéral,24067,104786,71999,51.3
+Québec,Saint-Maurice--Champlain,Nouveau parti démocratique,24068,96968,80534,60.7
+Québec,Shefford,Nouveau parti démocratique,24069,100000,84666,64.8
+Québec,Sherbrooke,Nouveau parti démocratique,24070,101681,82918,63.4
+Québec,Terrebonne--Blainville,Nouveau parti démocratique,24071,107694,88734,65.7
+Québec,Trois-Rivières,Nouveau parti démocratique,24072,94272,79520,64.5
+Québec,Vaudreuil-Soulanges,Nouveau parti démocratique,24073,120395,104325,67.1
+Québec,Verchères--Les Patriotes,Nouveau parti démocratique,24074,97726,80472,71.4
+Québec,Westmount--Ville-Marie,Parti libéral,24075,100360,77656,53.4
+Saskatchewan,Battlefords--Lloydminster,Parti conservateur,47001,71184,50655,56.9
+Saskatchewan,Blackstrap,Parti conservateur,47002,76273,61955,69.3
+Saskatchewan,Cypress Hills--Grasslands,Parti conservateur,47004,60551,44539,66.3
+Saskatchewan,Desnethé--Missinippi--Rivière Churchill,Parti conservateur,47003,67937,43739,50.4
+Saskatchewan,Palliser,Parti conservateur,47005,65956,50175,67.4
+Saskatchewan,Prince Albert,Parti conservateur,47006,71159,51656,60
+Saskatchewan,Regina--Lumsden--Lake Centre,Parti conservateur,47007,65885,51380,66.3
+Saskatchewan,Regina--Qu'Appelle,Parti conservateur,47008,66698,49386,60.4
+Saskatchewan,Saskatoon--Humboldt,Parti conservateur,47009,75051,57055,66.5
+Saskatchewan,Saskatoon--Rosetown--Biggar,Parti conservateur,47010,69547,49947,60.5
+Saskatchewan,Saskatoon--Wanuskewin,Parti conservateur,47011,72867,57654,63.1
+Saskatchewan,Souris--Moose Mountain,Parti conservateur,47012,63238,47061,62.2
+Saskatchewan,Wascana,Parti libéral,47013,75717,57815,67.2
+Saskatchewan,Yorkton--Melville,Parti conservateur,47014,66094,50797,62.7
+Terre-Neuve-et-Labrador,Avalon,Parti libéral,10001,78381,64424,56.8
+Terre-Neuve-et-Labrador,Bonavista--Gander--Grand Falls--Windsor,Parti libéral,10002,86394,69936,44.8
+Terre-Neuve-et-Labrador,Humber--St. Barbe--Baie Verte,Parti libéral,10003,73171,59109,50.9
+Terre-Neuve-et-Labrador,Labrador,Parti conservateur,10004,26364,20305,52.9
+Terre-Neuve-et-Labrador,Random--Burin--St. George's,Parti libéral,10005,71219,57556,45.4
+Terre-Neuve-et-Labrador,St. John's-Est,Nouveau parti démocratique,10006,88002,76424,57.8
+Terre-Neuve-et-Labrador,St. John's-Sud--Mount Pearl,Nouveau parti démocratique,10007,81938,67025,58.3
+Territoires du Nord-Ouest,Western Arctic,Nouveau parti démocratique,61001,41464,29020,53.9
+Yukon,Yukon,Parti conservateur,60001,30372,24341,66.2

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Scatterplot</title>
+  <script type="text/javascript" src="lib/d3.min.js"></script>
+  <script src="lib/d3-legend.min.js"></script>  
+
+  
+</head>
+<style type="text/css">
+
+  /* Webfont:  Rubrik-Medium */
+@font-face {
+    font-family:'RubrikM';
+  font-style:normal;
+  font-weight:400;
+  src:  url(http://www.r-c.ca/_font/Rubrik/Rubrik-Medium.eot);
+  src:  url(http://www.r-c.ca/_font/Rubrik-Medium.eot?#iefix) format("embedded-opentype"),
+      url(http://www.r-c.ca/_font/Rubrik/Rubrik-Medium.woff) format("woff"),
+      url(http://www.r-c.ca/_font/Rubrik/Rubrik-Medium.svg#Rubrik-Medium) format("svg"),
+      url(http://www.r-c.ca/_font/Rubrik/Rubrik-Medium.ttf) format("truetype")
+}
+    
+/* Webfont:  Rubrik-Light */
+@font-face {
+    font-family:'RubrikLt';
+  font-style:normal;
+  font-weight:400;
+  src:  url(http://www.r-c.ca/_font/Rubrik/Rubrik-Light.eot);
+  src:  url(http://www.r-c.ca/_font/Rubrik-Light.eot?#iefix) format("embedded-opentype"),
+      url(http://www.r-c.ca/_font/Rubrik/Rubrik-Light.woff) format("woff"),
+      url(http://www.r-c.ca/_font/Rubrik/Rubrik-Light.svg#Rubrik-Light) format("svg"),
+      url(http://www.r-c.ca/_font/Rubrik/Rubrik-Light.ttf) format("truetype")
+}
+  
+  body {
+    background-color: white;
+  }
+
+  h1 {
+    font-size: 20px;
+    margin: 0;
+    font-family: RubrikLT;
+  }
+
+  p {
+    font-size: 11px;
+    margin: 11px 0 0 0;
+    font-family: RubrikLT;
+  }
+
+  svg {
+    background-color: white;
+  }
+  
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #6d6d6d;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+  }
+  
+  .axis text {
+    font-family: sans-serif;
+    font-size: 11px;
+    font-color: #6d6d6d;
+  }
+
+.tooltip {
+  position: absolute;
+  pointer-events: none;
+  font: 12px sans-serif;
+  background: white;
+}
+
+#figure {
+  width: 100%;
+  text-align: left;
+}
+#legende {
+/*  border: 1px solid #bebebe;
+*/  width: 20px;
+  height:60px;
+  position:fixed;
+  padding:18px;
+  right: 10px;
+  bottom: 50px;
+  font-family: Arial;
+  font-size: 9px;
+  }
+
+.block {
+  width: 185px;
+  display: inline-block;
+}​
+
+</style>
+<body>
+
+<h1>Où a-t-on voté le plus et le moins en 2011?</h1>
+
+<div id="figure">
+  <div class="tooltip"></div>
+    <div id="filtre-provinces" class="block">
+      <p><b>Provinces :</b></p>
+    </div>
+    <div id="filtre-partis" class="block">
+     <p><b>Partis :</b></p>
+    </div>
+    <div id="filtre-circonscriptions" class="block">
+     <p><b>Circonscriptions :</b></p>
+    </div>
+    <svg id="graphique"></svg>
+    <svg id="legende" class="#legende"></svg>
+</div>
+<p>Source: <a href="http://www.elections.ca">Élections Canada</a></p>
+  </body>
+
+
+<script type="text/javascript">
+
+  var w = 635;
+  var h = 357;
+  var margin = {top: 20, right: 20, bottom: 10, left: 30};
+
+
+  var svg = d3.select("#graphique")
+    .attr("viewBox", [
+        margin.left,
+        margin.top,
+        (w+margin.left),
+        (h+margin.bottom)
+      ].join(" "))
+       .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+  // var svg = d3.select("body")
+  //         .append("svg")
+  //         .attr("width", w)
+  //         .attr("height", h);
+
+  var color = {
+  "Parti conservateur": "#1f77b4",
+  "Parti libéral": "#d62728",
+  "Nouveau parti démocratique": "#ff7f0e",
+  "Parti vert": "#2ca02c",
+  "Bloc québécois": "#17becf"
+};
+
+  var xScale = d3.scale.linear()  
+                .range([ margin.left, w - margin.right - margin.left ]);
+  
+  var yScale = d3.scale.linear()  // écart entre les barres
+            .range([ 40, h - margin.bottom ]);  
+
+  var xAxis = d3.svg.axis()
+          .scale(xScale)
+          .ticks(5)
+          .orient("bottom");
+
+  var yAxis = d3.svg.axis()
+          .scale(yScale)
+          .orient("left")
+          .ticks(5)
+          .tickFormat(function(d) {
+                return d;
+              });
+
+  var tooltip = d3.select("body")
+          .append("div")
+          .attr("class", "tooltip")
+          .style("opacity", 0);
+
+  var provinces = ["Alberta", "Colombie-Britannique" , "Île-du-Prince-Édouard", "Manitoba", "Nouveau-Brunswick", "Nouvelle-Écosse", "Nunavut", "Ontario", "Québec", "Saskatchewan", "Terre-Neuve-et-Labrador", "Territoires du Nord-Ouest", "Yukon"];
+
+  var partis = ["Parti conservateur", "Parti libéral", "Parti vert", "Nouveau parti démocratique", "Bloc québécois"]
+      partis.sort();
+
+  var circonscriptions = ["Calgary--Nose Hill", "Calgary-Centre", "Calgary-Centre-Nord", "Calgary-Est", "Calgary-Nord-Est", "Calgary-Ouest", "Calgary-Sud-Est", "Calgary-Sud-Ouest", "Crowfoot", "Edmonton--Leduc", "Edmonton--Mill Woods--Beaumont", "Edmonton--Sherwood Park", "Edmonton--Spruce Grove", "Edmonton--St. Albert", "Edmonton--Strathcona", "Edmonton-Centre", "Edmonton-Est", "Fort McMurray--Athabasca", "Lethbridge", "Macleod", "Medicine Hat", "Peace River", "Red Deer", "Vegreville--Wainwright", "Westlock--St. Paul", "Wetaskiwin", "Wild Rose", "Yellowhead", "Abbotsford", "Burnaby--Douglas", "Burnaby--New Westminster", "Cariboo--Prince George", "Chilliwack--Fraser Canyon", "Colombie-Britannique-Southern Interior", "Delta--Richmond-Est", "Esquimalt--Juan de Fuca", "Fleetwood--Port Kells", "Ile de Vancouver-Nord", "Kamloops--Thompson--Cariboo", "Kelowna--Lake Country", "Kootenay--Columbia", "Langley", "Nanaimo--Alberni", "Nanaimo--Cowichan", "New Westminster--Coquitlam", "Newton--Delta-Nord", "North Vancouver", "Okanagan--Coquihalla", "Okanagan--Shuswap", "Pitt Meadows--Maple Ridge--Mission", "Port Moody--Westwood--Port Coquitlam", "Prince George--Peace River", "Richmond", "Saanich--Gulf Islands", "Skeena--Bulkley Valley", "Surrey-Nord", "Surrey-Sud--White Rock--Cloverdale", "Vancouver Kingsway", "Vancouver Quadra", "Vancouver-Centre", "Vancouver-Est", "Vancouver-Sud", "Victoria", "West Vancouver--Sunshine Coast--Sea to Sky Country", "Cardigan", "Charlottetown", "Egmont", "Malpeque", "Brandon--Souris", "Charleswood--St. James--Assiniboia", "Churchill", "Dauphin--Swan River--Marquette", "Elmwood--Transcona", "Kildonan--St. Paul", "Portage--Lisgar", "Provencher", "Saint-Boniface", "Selkirk--Interlake", "Winnipeg-Centre", "Winnipeg-Centre-Sud", "Winnipeg-Nord", "Winnipeg-Sud", "Acadie--Bathurst", "Beauséjour", "Fredericton", "Fundy Royal", "Madawaska--Restigouche", "Miramichi", "Moncton--Riverview--Dieppe", "Nouveau-Brunswick-Sud-Ouest", "Saint John", "Tobique--Mactaquac", "Cape Breton--Canso", "Cumberland--Colchester--Musquodoboit Valley", "Dartmouth--Cole Harbour", "Halifax", "Halifax-Ouest", "Kings--Hants", "Nova-Centre", "Nova-Ouest", "Sackville--Eastern Shore", "South Shore--St. Margaret's", "Sydney--Victoria", "Nunavut", "Ajax--Pickering", "Algoma--Manitoulin--Kapuskasing", "Ancaster--Dundas--Flamborough--Westdale", "Barrie", "Beaches--East York", "Bramalea--Gore--Malton", "Brampton--Springdale", "Brampton-Ouest", "Brant", "Bruce--Grey--Owen Sound", "Burlington", "Cambridge", "Carleton--Mississippi Mills", "Chatham-Kent--Essex", "Davenport", "Don Valley-Est", "Don Valley-Ouest", "Dufferin--Caledon", "Durham", "Eglinton--Lawrence", "Elgin--Middlesex--London", "Essex", "Etobicoke--Lakeshore", "Etobicoke-Centre", "Etobicoke-Nord", "Glengarry--Prescott--Russell", "Guelph", "Haldimand--Norfolk", "HaParti libéralurton--Kawartha Lakes--Brock", "Halton", "Hamilton Mountain", "Hamilton-Centre", "Hamilton-Est--Stoney Creek", "Huron--Bruce", "Kenora", "Kingston et les Îles", "Kitchener--Conestoga", "Kitchener--Waterloo", "Kitchener-Centre", "Lambton--Kent--Middlesex", "Lanark--Frontenac--Lennox and Addington", "Leeds--Grenville", "London--Fanshawe", "London-Centre-Nord", "London-Ouest", "Markham--Unionville", "Mississauga--Brampton-Sud", "Mississauga--Erindale", "Mississauga--Streetsville", "Mississauga-Est--Cooksville", "Mississauga-Sud", "Nepean--Carleton", "Newmarket--Aurora", "Niagara Falls", "Niagara-Ouest--Glanbrook", "Nickel Belt", "Nipissing--Timiskaming", "Northumberland--Quinte West", "Oak Ridges--Markham", "Oakville", "Oshawa", "Ottawa--Orléans", "Ottawa--Vanier", "Ottawa-Centre", "Ottawa-Ouest--Nepean", "Ottawa-Sud", "Oxford", "Parkdale--High Park", "Parry Sound--Muskoka", "Perth--Wellington", "Peterborough", "Pickering--Scarborough-Est", "Prince Edward--Hastings", "Renfrew--Nipissing--Pembroke", "Richmond Hill", "Sarnia--Lambton", "Sault Ste. Marie", "Scarborough--Agincourt", "Scarborough--Guildwood", "Scarborough--Rouge River", "Scarborough-Centre", "Scarborough-Sud-Ouest", "Simcoe--Grey", "Simcoe-Nord", "St. Catharines", "St. Paul's", "Stormont--Dundas--South Glengarry", "Sudbury", "Thornhill", "Thunder Bay--Rainy River", "Thunder Bay--Superior-Nord", "Timmins--Baie James", "Toronto--Danforth", "Toronto-Centre", "Trinity--Spadina", "Vaughan", "Welland", "Wellington--Halton Hills", "Whitby--Oshawa", "Willowdale", "Windsor-Ouest", "Windsor--Tecumseh", "York--Simcoe", "York-Centre", "York-Ouest", "York-Sud--Weston", "Abitibi--Baie-James--Nunavik--Eeyou", "Abitibi--Témiscamingue", "Ahuntsic", "Alfred-Pellan", "Argenteuil--Papineau--Mirabel", "Bas-Richelieu--Nicolet--Bécancour", "Beauce", "Beauharnois--Salaberry", "Beauport--Limoilou", "Berthier--Maskinongé", "Bourassa", "Brome--Missisquoi", "Brossard--La Prairie", "Chambly--Borduas", "Charlesbourg--Haute-Saint-Charles", "Châteauguay--Saint-Constant", "Chicoutimi--Le Fjord", "Compton--Stanstead", "Drummond", "Gaspésie--Îles-de-la-Madeleine", "Gatineau", "Haute-Gaspésie--La Mitis--Matane--Matapédia", "Hochelaga", "Honoré-Mercier", "Hull--Aylmer", "Jeanne-Le Ber", "Joliette", "Jonquière--Alma", "La Pointe-de-l'Île", "Lac-Saint-Louis", "LaSalle--Émard", "Laurentides--Labelle", "Laurier--Sainte-Marie", "Laval", "Laval--Les Îles", "Lévis--Bellechasse", "Longueuil--Pierre-Boucher", "Lotbinière--Chutes-de-la-Chaudière", "Louis-Hébert", "Louis-Saint-Laurent", "Manicouagan", "Marc-Aurèle-Fortin", "Mégantic--L'Érable", "Mont-Royal", "Montcalm", "Montmagny--L'Islet--Kamouraska--Rivière-du-Loup", "Montmorency--Charlevoix--Haute-Côte-Nord", "Notre-Dame-de-Grâce--Lachine", "Outremont", "Papineau", "Pierrefonds--Dollard", "Pontiac", "Portneuf--Jacques-Cartier", "Québec", "Repentigny", "Richmond--Arthabaska", "Rimouski-Neigette--Témiscouata--Les Basques", "Rivière-des-Mille-Îles", "Rivière-du-Nord", "Roberval--Lac-Saint-Jean", "Rosemont--La Petite-Patrie", "Saint-Bruno--Saint-Hubert", "Saint-Hyacinthe--Bagot", "Saint-Jean", "Saint-Lambert", "Saint-Laurent--Cartierville", "Saint-Léonard--Saint-Michel", "Saint-Maurice--Champlain", "Shefford", "Sherbrooke", "Terrebonne--Blainville", "Trois-Rivières", "Vaudreuil-Soulanges", "Verchères--Les Patriotes", "Westmount--Ville-Marie", "Battlefords--Lloydminster", "Blackstrap", "Cypress Hills--Grasslands", "Desnethé--Missinippi--Rivière Churchill", "Palliser", "Prince Albert", "Regina--Lumsden--Lake Centre", "Regina--Qu'Appelle", "Saskatoon--Humboldt", "Saskatoon--Rosetown--Biggar", "Saskatoon--Wanuskewin", "Souris--Moose Mountain", "Wascana", "Yorkton--Melville", "Avalon", "Bonavista--Gander--Grand Falls--Windsor", "Humber--St. Barbe--Baie Verte", "Labrador", "Random--Burin--St. George's", "St. John's-Est", "St. John's-Sud--Mount Pearl", "Western Arctic", "Yukon"]
+      circonscriptions.sort();
+
+// Recherche par parti
+
+  var dropDown = d3.select("#filtre-partis")
+            .append("select")
+            .attr("name", "partis-list");
+
+
+  var options = dropDown.selectAll("option")
+           .data(["Tous"]
+            .concat(partis))
+           .enter()
+           .append("option");
+
+  options.text(function (d) { return d; })
+       .attr("value", function (d) { return d; });
+       
+ // Recherche par province
+
+  var dropDown2 = d3.select("#filtre-provinces")
+            .append("select")
+            .attr("name", "provinces-list");
+
+  var options = dropDown2.selectAll("option")
+           .data(["Toutes"].concat(provinces))
+         .enter()
+           .append("option");
+
+  options.text(function (d) { return d; })
+       .attr("value", function (d) { return d; })
+
+ // Recherche par circonscription
+
+  var dropDown3 = d3.select("#filtre-circonscriptions")
+            .append("select")
+            .attr("style", "width:185px")
+            .attr("name", "circonscriptions-list");
+
+  var options = dropDown3.selectAll("option")
+           .data(["Toutes"].concat(circonscriptions))
+         .enter()
+           .append("option");
+
+  options.text(function (d) { return d; })
+       .attr("value", function (d) { return d; });
+
+var ordinal = d3.scale.ordinal()
+  .domain(["Bloc", "NPD", "PCC", "PLC", "PV"])
+  .range([ "#17becf", "#ff7f0e", "#1f77b4", "#d62728", "#2ca02c"]);
+
+// Données
+
+  d3.csv("data/2011_participation.csv", function(data) {
+
+    data.sort(function(a, b) {
+      return d3.descending(+a.tauxParticipation, +b.tauxParticipation);
+    });
+    
+   xScale.domain([ 
+          // d3.min(data, function(d) {
+          //   return +d.electeurs;
+          // }), 
+          0,
+          d3.max(data, function(d) {
+            return +d.electeurs;
+          })
+        ]);
+
+   yScale.domain([ 
+          d3.max(data, function(d) {
+            return +d.tauxParticipation;
+          }),
+          0
+          // d3.min(data, function(d) {
+          //   return +d.tauxParticipation;
+          // })
+        ]);
+    
+    var circles = svg.selectAll("circle")
+          .data(data)
+          .enter()
+          .append("circle");
+    
+    circles
+      .attr("cx", function(d) {
+        return xScale(d.electeurs);})
+     .attr("cy", function(d) {
+        return yScale(d.tauxParticipation);
+      })
+      .attr("r", 0.1)
+      .style("fill", function(d) { return color[d.parti]; })
+      .style("opacity", 0.7)
+
+      // .attr("fill", function(d) { return color(d);})
+      .on("mouseover", function(d) {
+          tooltip.transition()
+               .duration(200)
+               .style("opacity", .9);
+          tooltip.html(d.circonscription + "<br>" + "Nb d'électeurs : " + d.electeurs + "<br>" + "Taux de participation : " +  d.tauxParticipation + " %")
+               .style("left", (d3.event.pageX + 5) + "px")
+               .style("top", (d3.event.pageY - 28) + "px");
+      })
+      .on("mouseout", function(d) {
+          tooltip.transition()
+               .duration(500)
+               .style("opacity", 0);
+      });
+
+// transition : on fait le tri (function nécessite a et b pour comparer), puis on ajoute un délai et on fait la transition
+
+  circles
+    .sort(function(a, b) {
+        return d3.ascending(+a.electeurs, +b.electeurs);
+    })
+    .transition()
+    .delay(function(d, i) {
+        return i * 10;
+    })      
+    .duration(200)
+    .attr("r", 5);
+
+  svg.append("g")
+    .attr("class", "axis")
+    .attr("transform", "translate(0," + (h - margin.bottom) + ")")
+    .call(xAxis)
+  .append("text")
+    .attr("class", "label")
+    .attr("x", (w - 45))
+    .attr("y", -6)
+    .style("text-anchor", "end")
+    .text("Nb d'électeurs");
+
+
+  svg.append("g")
+    .attr("class", "axis")
+    .attr("transform", "translate(" + margin.left + ",0)")
+    .call(yAxis)
+  .append("text")
+    .attr("class", "label")
+    .attr("transform", "rotate(-90)")
+    .attr("x", -40)
+    .attr("y", 5)
+    .attr("dy", ".91em")
+    .style("text-anchor", "end")
+    .text("Taux de participation (%)");
+
+// menu partis
+
+  dropDown.on("change", function() {
+      var selected = this.value;
+      displayOthers = this.checked ? "inline" : "none";
+      display = this.checked ? "none" : "inline";
+
+      if(selected == 'Tous'){
+        svg.selectAll("circle")
+            .attr("display", display)
+               .transition()
+    .duration(500)
+    .attr("r", 5);;
+      }
+      else{
+        svg.selectAll("circle")
+            .filter(function(d) {console.log(d, selected); return selected != d.parti;})
+            .attr("display", displayOthers);
+            
+        svg.selectAll("circle")
+            .filter(function(d) {return selected == d.parti;})
+            .attr("display", display)
+               .transition()  
+    .duration(500)
+    .attr("r", 7);;
+      }
+  });
+
+// menu provinces
+
+  dropDown2.on("change", function() {
+      var selected = this.value;
+      displayOthers = this.checked ? "inline" : "none";
+      display = this.checked ? "none" : "inline";
+
+      if(selected == 'Toutes'){
+        svg.selectAll("circle")
+            .attr("display", display)
+               .transition()   
+    .duration(200)
+    .attr("r", 5);;
+      }
+      else{
+        svg.selectAll("circle")
+            .filter(function(d) { return selected != d.province;})
+            .attr("display", displayOthers);
+            
+        svg.selectAll("circle")
+            .filter(function(d) {return selected == d.province;})
+            .attr("display", display)
+               .transition()    
+                 .duration(500)
+                .attr("r", 7);;
+      }
+  });
+
+// menu circonscriptions
+
+  dropDown3.on("change", function() {
+      var selected = this.value;
+      displayOthers = this.checked ? "inline" : "none";
+      display = this.checked ? "none" : "inline";
+
+      if(selected == 'Toutes'){
+        svg.selectAll("circle")
+            .attr("display", display)
+               .transition()   
+    .duration(500)
+    .attr("r", 5);;
+      }
+      else{
+        svg.selectAll("circle")
+            .filter(function(d) {console.log(d, selected); return selected != d.circonscription;})
+            .attr("display", displayOthers);
+            
+        svg.selectAll("circle")
+            .filter(function(d) {return selected == d.circonscription;})
+            .attr("display", display)
+               .transition()
+    .duration(500)
+    .attr("r", 7);;
+      }
+  });
+
+// Légende
+
+var legendOrdinal = d3.legend.color()
+  .shape("circle")
+  .shapeRadius(5)
+  // .orient("horizontal")
+  .shapePadding(5)
+  .scale(ordinal);
+
+d3.select("#legende")
+  .call(legendOrdinal);
+
+  });
+  
+    </script>
+
+</html>
