@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphique en barres</title>
+    <script type="text/javascript" src="lib/d3.min.js"></script>
+    <script src="lib/d3-legend.min.js"></script>  
+    <script src="lib/d3-tip.js"></script>   
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<h1>L'environnement nuit-il au développement économique?</h1>
+
+<p>Depuis 2000, plus de 20 pays ont réduit leurs émissions de GES tout en ayant une croissance économique.</p>
+
+<div class="figure">
+<svg id="legende"></svg>
+<svg id="chart"></svg>
+</div>
+
+<div class="source"><p>Source : BP Statistical Review of World Energy 2015 et World Bank Development Indicators</p></div>
+
+</body>     
+
+<script type="text/javascript">
+
+var margin = {
+    top: 10,
+    right: 10,
+    bottom: 30,
+    left: 10
+},
+    width = 635 - margin.left - margin.right,
+    height = 357 - margin.top - margin.bottom,
+    centered;
+
+var x = d3.scale.linear()
+    .domain([-100,100])
+    .range([0, width])
+
+var y = d3.scale.ordinal()
+    .rangeRoundBands([0, height], .2);
+
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom");
+
+var svg = d3.select("#chart")
+          .attr("width", width + margin.left + margin.right)
+          .attr("height", height + margin.top + margin.bottom)
+          .attr("viewBox", "0 0 " + ( width + margin.left + margin.right ) + " " + (height + margin.top + margin.bottom))
+          .append("g")
+          .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+var g = svg.append("g");
+
+d3.csv("data/data.csv",
+        function(data) {
+
+var tip = d3.tip()
+  .attr('class', 'd3-tip')
+  .offset([-5, 0])
+  .html(function(d) {
+    return "<span class='data'>" + d.pays + "</span><br/><p>"
+     + d.pib + " % de croissance du PIB</p><br/><p>" 
+     + d.ges + " % de baisse des GES</p>" ;
+  })
+  g.call(tip);
+
+x.domain([-100,100])
+y.domain(data.map(function (d) {
+    return d.pays;
+}));
+
+g.selectAll(".bar")
+    .data(data)
+    .enter().append("rect")
+    .attr("class", "bar")
+    .attr("x", function (d) {
+    return x(Math.min(0, d.ges));
+})
+    .attr("y", function (d) {
+    return y(d.pays);
+})
+    .attr("width", function (d) {
+    return Math.abs(x(d.ges) - x(0));
+})
+    .attr("height", y.rangeBand())
+    .on('mouseover', function(d, i) {
+                 tip.show(d,i)
+                // .style("top", (100)+"px")
+                .style("left",(50)+"px");
+        })
+              .on('mouseout',  function(d, i) {
+                tip.hide(d,i);
+        });    
+
+
+g.selectAll(".bar2")
+    .data(data)
+    .enter().append("rect")
+    .attr("class", "bar2")
+    .attr("x", function (d) {
+    return x(Math.min(0, d.pib));
+})
+    .attr("y", function (d) {
+    return y(d.pays);
+})
+    .attr("width", function (d) {
+    return Math.abs(x(-d.pib) - x(0));
+})
+    .attr("height", y.rangeBand())
+    .on('mouseover', function(d, i) {
+                 tip.show(d,i)
+                // .style("top", (100)+"px")
+                .style("left",(50)+"px");
+        })
+              .on('mouseout',  function(d, i) {
+                tip.hide(d,i);
+        });    
+
+
+g.append("g")
+    .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+    .call(xAxis)
+.append("text")
+      // .attr("transform", "rotate(-90)")
+      .attr("x", 620)
+      .attr("dy", "-.71em")
+      .style("text-anchor", "end")
+      .text("%");     
+
+g.append("g")
+    .attr("class", "y axis")
+    .append("line")
+    .attr("x1", x(0))
+    .attr("x2", x(0))
+    .attr("y2", height);
+
+g.selectAll(".label")
+    .data(data)
+    .enter().append("svg:text")
+        .attr("class", "label")
+        .attr("x", 0)
+        .attr("y", function(d) {
+            return y(d.pays) + 10;
+        })
+        .text(function(d) {
+        return d.pays;
+   });
+
+
+function type(d) {
+    d.ges = +d.ges;
+    return d;
+}
+
+///LÉGENDE
+
+var legende = d3.scale.ordinal()
+  .domain(["PIB","GES"])
+  .range(["#bebebe","#cc0000"]);
+
+g.append("g")
+  .attr("class", "legendLinear")
+  .attr("transform", "translate(20,20)");
+
+var legendLinear = d3.legend.color()
+                  .shapeWidth(5)
+          .shape("circle")
+                  .orient('vertical')
+                  .shapeRadius(5)
+                  .labels(["PIB","GES"])
+          .scale(legende);
+                  // .scale(color);
+
+d3.select("#legende")  .attr("font-size", "10px").call(legendLinear)
+
+        });
+
+</script>   
+</html>
